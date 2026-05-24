@@ -1,0 +1,6 @@
+{
+  "name": "Imperial Maps",
+  "description": "An interactive vintage-styled geographical atlas of India and the World with political, physical, and river-mountain topological sections, offering scholarly historical analysis powered by Gemini AI.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

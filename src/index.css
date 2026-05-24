@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "EB Garamond", serif;
+  --font-sans: "Cinzel", serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --color-parchment-light: #fdfaf2;
+  --color-parchment-def: #f5f0df;
+  --color-parchment-dark: #ebdcb2;
+  --color-vintage-gold: #b39247;
+  --color-vintage-bronze: #8a6c31;
+  --color-charcoal-ink: #2b241a;
+  --color-crimson-realm: #a63f3f;
+  --color-forest-realm: #3b6b4c;
+}
+
+/* Vintage parchment texture overlay */
+.parchment-texture {
+  background-color: #f5eed7;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.4) 0%, rgba(139, 115, 85, 0.15) 100%), url('/src/assets/images/aged_parchment_1779541972455.png');
+  background-repeat: repeat;
+  background-size: cover;
+}
+
+/* Custom ornamental border styling */
+.ornamental-border {
+  border: 10px solid #735932;
+  border-image: repeating-linear-gradient(45deg, #a88448, #735932 10px, #a88448 20px) 10;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25), inset 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.journal-cover {
+  background: linear-gradient(135deg, #3d2212 0%, #1a0de0 0%, #26140a 100%);
+  border: 8px solid #54331a;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.6), inset 0 0 15px rgba(0,0,0,0.5);
+}
+
+/* Coordinates grids with dashed classic lines */
+.parchment-grid-line {
+  stroke: rgba(135, 108, 65, 0.16);
+  stroke-dasharray: 4 6;
+}
+
+/* Sea and contour lines inside the custom interactive SVGs */
+.coastal-contour {
+  stroke: rgba(135, 108, 65, 0.25);
+  stroke-width: 0.75;
+  fill: none;
+}
+
+/* Aged text styles */
+.serif-vintage {
+  font-family: 'EB Garamond', Georgia, serif;
+}
+
+.sans-imperial {
+  font-family: 'Cinzel', Trajan, serif;
+  letter-spacing: 0.1em;
+}
+
+.mono-maritime {
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.05em;
+}
+
+/* Pulsing beacon for map pin highlights */
+@keyframes beacon {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+.pin-beacon {
+  animation: beacon 2s infinite ease-out;
+}
+
+/* Animated flowing rivers styled for vintage sepias */
+@keyframes river-flow-animation {
+  to {
+    stroke-dashoffset: -24;
+  }
+}
+
+.river-flowing {
+  stroke-dasharray: 6, 6;
+  animation: river-flow-animation 1.5s linear infinite;
+  transition: stroke-width 0.2s, stroke 0.2s, filter 0.2s;
+}
+
+.river-flowing-selected {
+  stroke-dasharray: 8, 4;
+  animation: river-flow-animation 0.75s linear infinite;
+  transition: stroke-width 0.2s, stroke 0.2s, filter 0.2s;
+  filter: drop-shadow(0 0 6px rgba(2, 132, 199, 0.8));
+}
+
+/* Customized Leaflet Tooltip for Caliper */
+.caliper-tooltip-custom {
+  background-color: #1f120a !important;
+  color: #ebdcb2 !important;
+  border: 1px solid #b39247 !important;
+  border-radius: 4px !important;
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 10px !important;
+  padding: 4px 8px !important;
+  opacity: 1.0 !important;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5) !important;
+}
+
+.caliper-tooltip-custom::before {
+  border-right-color: #1f120a !important;
+}
+
+/* Custom transparent Leaflet tooltip for river name prints overlay */
+.transparent-leaflet-tooltip {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.transparent-leaflet-tooltip::before {
+  border: none !important;
+}
+
+/* Surveyor Caliper Entrance Animation */
+@keyframes caliper-entrance-inner {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.15);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.caliper-inner-animate {
+  animation: caliper-entrance-inner 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  transform-origin: center;
+}
+
+
+
