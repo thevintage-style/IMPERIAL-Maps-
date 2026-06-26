@@ -11,7 +11,10 @@ export const INDIA_LOCATIONS: PresetLocation[] = [
     lng: 77.2090,
     category: "city",
     subCategoryText: "Imperial Citadel & Capital Seat",
-    details: "The legendary seat of dynasties—from the Tomar Rajputs and Delhi Sultanates to the grand Mughals. It rests at the pivotal junction of the Indo-Gangetic Plain and the Aravalli Ridge, commanding trade routes between Central Asia and Bengal."
+    details: "The legendary seat of dynasties—from the Tomar Rajputs and Delhi Sultanates to the grand Mughals. It rests at the pivotal junction of the Indo-Gangetic Plain and the Aravalli Ridge, commanding trade routes between Central Asia and Bengal.",
+    era: "Medieval",
+    kingsRuled: "Anangpal Tomar (1051-1081), Alauddin Khalji (1296-1316), Akbar the Great (1556-1605)",
+    giTags: ["Delhi Handloom Rugs", "Old Delhi Chanderi"]
   },
   {
     id: "agra",
@@ -23,7 +26,10 @@ export const INDIA_LOCATIONS: PresetLocation[] = [
     lng: 78.0081,
     category: "fort",
     subCategoryText: "Mughal Stronghold",
-    details: "Home to the colossal Agra Fort and the Taj Mahal. Rests on the banks of the winding Yamuna River. Agra served as a magnificent capital where emperors designed monumental red-sandstone walls and marble gardens."
+    details: "Home to the colossal Agra Fort and the Taj Mahal. Rests on the banks of the winding Yamuna River. Agra served as a magnificent capital where emperors designed monumental red-sandstone walls and marble gardens.",
+    era: "Early Modern",
+    kingsRuled: "Sikandar Lodi (1489-1517), Shah Jahan (1628-1658)",
+    giTags: ["Agra Durrie", "Petha Sweet of Agra", "Marble Inlay Work (Pachikari)"]
   },
   {
     id: "bombay",
@@ -35,7 +41,10 @@ export const INDIA_LOCATIONS: PresetLocation[] = [
     lng: 72.825,
     category: "city",
     subCategoryText: "Maritime Enclave & Port",
-    details: "Originally a group of seven swampy islands ceded by Portugal to the British Crown. It evolved into India's premier gateway to the West, leveraging a magnificent deep-water natural harbor shielded from the Arabian monsoon."
+    details: "Originally a group of seven swampy islands ceded by Portugal to the British Crown. It evolved into India's premier gateway to the West, leveraging a magnificent deep-water natural harbor shielded from the Arabian monsoon.",
+    era: "Modern",
+    kingsRuled: "Portuguese Crown (1534-1661), British East India Company (1668-1858)",
+    giTags: ["East Indian Rice Beer", "Mumbai Pav"]
   },
   {
     id: "calcutta",
@@ -47,7 +56,10 @@ export const INDIA_LOCATIONS: PresetLocation[] = [
     lng: 88.3639,
     category: "city",
     subCategoryText: "Presidential Headquarters",
-    details: "Founded on the marshy banks of the Hooghly River. It rose from three humble jute-weaving villages to become the glittering, neoclassical capital of the British Raj, driven by tea, silk, and indigo riches."
+    details: "Founded on the marshy banks of the Hooghly River. It rose from three humble jute-weaving villages to become the glittering, neoclassical capital of the British Raj, driven by tea, silk, and indigo riches.",
+    era: "Modern",
+    kingsRuled: "Job Charnock (Founder, 1690), Lord Warren Hastings (1773-1785), Lord Curzon (1899-1905)",
+    giTags: ["Darjeeling Tea", "Rosogolla", "Santipore Saree"]
   },
   {
     id: "goa",
@@ -59,7 +71,10 @@ export const INDIA_LOCATIONS: PresetLocation[] = [
     lng: 73.8278,
     category: "city",
     subCategoryText: "Portuguese Viceroyalty",
-    details: "The crown jewel of the Portuguese Estado da Índia, captured by Afonso de Albuquerque in 1510. It served as the crucial node of the Arabian horse trade, pepper routing, and Jesuit scholastic missions."
+    details: "The crown jewel of the Portuguese Estado da Índia, captured by Afonso de Albuquerque in 1510. It served as the crucial node of the Arabian horse trade, pepper routing, and Jesuit scholastic missions.",
+    era: "Early Modern",
+    kingsRuled: "Afonso de Albuquerque (1510-1515), Viceroy Francisco de Almeida",
+    giTags: ["Goan Feni", "Goa Khaje", "Harmal Chilli"]
   },
   {
     id: "hampi",
@@ -71,7 +86,10 @@ export const INDIA_LOCATIONS: PresetLocation[] = [
     lng: 76.4600,
     category: "city",
     subCategoryText: "Medieval Capital Ruins",
-    details: "The monumental capital of the Vijayanagara Empire, surrounded by a bizarre landscape of giant granite boulders beside the Tungabhadra River. It fell after the fateful Battle of Talikota in 1565."
+    details: "The monumental capital of the Vijayanagara Empire, surrounded by a bizarre landscape of giant granite boulders beside the Tungabhadra River. It fell after the fateful Battle of Talikota in 1565.",
+    era: "Medieval",
+    kingsRuled: "Harihara I (1336-1356), Krishnadevaraya (1509-1529), Rama Raya (1542-1565)",
+    giTags: ["Sandur Lambani Embroidery", "Udupi Jasmine"]
   },
   {
     id: "mysore",
@@ -83,7 +101,10 @@ export const INDIA_LOCATIONS: PresetLocation[] = [
     lng: 76.6394,
     category: "city",
     subCategoryText: "Principal State Seat",
-    details: "Ruled by the Wodeyar line and briefly the military geniuses Hyder Ali and Tipu Sultan—the Tiger of Mysore. Celebrated for sandalwood forests, military rocket technology, and sprawling palace architectures."
+    details: "Ruled by the Wodeyar line and briefly the military geniuses Hyder Ali and Tipu Sultan—the Tiger of Mysore. Celebrated for sandalwood forests, military rocket technology, and sprawling palace architectures.",
+    era: "Early Modern",
+    kingsRuled: "Yaduraya Wodeyar (1399-1423), Chikka Devaraja (1673-1704), Tipu Sultan (1782-1799)",
+    giTags: ["Mysore Silk", "Mysore Sandalwood Oil", "Mysore Pak Sweet", "Mysore Ganjifa Cards"]
   },
   {
     id: "jaipur",
@@ -95,7 +116,370 @@ export const INDIA_LOCATIONS: PresetLocation[] = [
     lng: 75.7873,
     category: "city",
     subCategoryText: "Rajput Citadel",
-    details: "Designed in 1727 by Maharaja Sawai Jai Singh II using advanced Vastu Shastra geometry. Located in the desert-fringe lands of Rajputana, it utilizes high stucco walls painted in welcoming terracotta-rose hues."
+    details: "Designed in 1727 by Maharaja Sawai Jai Singh II using advanced Vastu Shastra geometry. Located in the desert-fringe lands of Rajputana, it utilizes high stucco walls painted in welcoming terracotta-rose hues.",
+    era: "Early Modern",
+    kingsRuled: "Maharaja Sawai Jai Singh II (1699-1743), Maharaja Sawai Madho Singh I",
+    giTags: ["Jaipur Blue Pottery", "Sanganeri Hand Block Prints", "Bagru Hand Block Prints"]
+  },
+  {
+    id: "pataliputra",
+    name: "Pataliputra (Patna)",
+    coordinatesStr: "N 25°36' / E 85°07'",
+    x: 62,
+    y: 35,
+    lat: 25.6122,
+    lng: 85.1218,
+    category: "city",
+    subCategoryText: "Imperial Capital of Magadha",
+    details: "The epicenter of India's earliest classical empires. It served as the capital of the Shishunagas, Mauryas, Sungas, and Guptas. Located at the sacred confluence of the Ganges, Son, and Gandak rivers, it dominated agrarian trade routes.",
+    era: "Ancient",
+    kingsRuled: "Ajatashatru (492-460 BCE), Chandragupta Maurya (321-297 BCE), Ashoka the Great (268-232 BCE), Samudragupta (335-375 CE)",
+    giTags: ["Sujini Embroidery", "Sikkki Grass Products of Bihar", "Madhubani Paintings (Mithila)"]
+  },
+  {
+    id: "kanchipuram",
+    name: "Golden Kanchipuram",
+    coordinatesStr: "N 12°50' / E 79°42'",
+    x: 42,
+    y: 80,
+    lat: 12.8342,
+    lng: 79.7036,
+    category: "city",
+    subCategoryText: "Pallava Capital of Learning",
+    details: "Known as the City of a Thousand Temples, Kanchipuram was the magnificent administrative and religious capital of the Pallava dynasty. Renowned for its spectacular Dravidian gopurams and silk handlooms.",
+    era: "Ancient",
+    kingsRuled: "Mahendravarman I (600-630 CE), Narasimhavarman I (630-668 CE), Rajasimha Pallava",
+    giTags: ["Kancheepuram Silk", "Kovai Kora Cotton"]
+  },
+  {
+    id: "thanjavur",
+    name: "Thanjavur (Tanjore)",
+    coordinatesStr: "N 10°47' / E 79°08'",
+    x: 41,
+    y: 84,
+    lat: 10.7870,
+    lng: 79.1378,
+    category: "city",
+    subCategoryText: "Chola Capital of Bronze & Granite",
+    details: "The crown jewel of the Imperial Cholas, home to the UNESCO Brihadisvara Temple. It served as a global center of bronze metal casting, Carnatic classical music, and majestic court dances.",
+    era: "Medieval",
+    kingsRuled: "Vijayalaya Chola (848-871 CE), Rajaraja Chola I (985-1014 CE), Rajendra Chola I",
+    giTags: ["Thanjavur Paintings", "Thanjavur Art Plate", "Thanjavur Veena", "Tanjore Doll (Thalaiyatti Bommai)"]
+  },
+  {
+    id: "badami",
+    name: "Badami (Vatapi)",
+    coordinatesStr: "N 15°54' / E 75°40'",
+    x: 32,
+    y: 70,
+    lat: 15.9129,
+    lng: 75.6773,
+    category: "city",
+    subCategoryText: "Chalukyan Rock-Cut Citadel",
+    details: "Nestled in a rugged red sandstone ravine around the Bhutanatha Lake. Vatapi was the spectacular capital of the early Chalukyas, famous for cave temples carved out of the living mountain cliffside.",
+    era: "Ancient",
+    kingsRuled: "Pulakeshin I (543-566 CE), Pulakeshin II (610-642 CE), Vikramaditya I",
+    giTags: ["Ilkal Sarees", "Guledgudda Khana Fabric"]
+  },
+  {
+    id: "ujjain",
+    name: "Ujjayini (Ujjain)",
+    coordinatesStr: "N 23°10' / E 75°46'",
+    x: 32,
+    y: 43,
+    lat: 23.1760,
+    lng: 75.7885,
+    category: "city",
+    subCategoryText: "Seat of Vikramaditya & Prime Meridian",
+    details: "Located on the banks of the sacred Shipra River. Ujjain was a legendary ancient capital of Avanti, one of the sixteen Mahajanapadas, and the historic center of Indian astronomy and timekeeping.",
+    era: "Ancient",
+    kingsRuled: "King Pradyota (500 BCE), Emperor Vikramaditya (Legendary), Chandragupta II (375-415 CE)",
+    giTags: ["Bhairavgarh Hand Block Prints", "Chanderi Saree", "Maheshwari Sarees"]
+  },
+  {
+    id: "pune",
+    name: "Pune (Poona)",
+    coordinatesStr: "N 18°31' / E 73°51'",
+    x: 25,
+    y: 63,
+    lat: 18.5204,
+    lng: 73.8567,
+    category: "city",
+    subCategoryText: "Peshwa Maratha Capital",
+    details: "Surrounded by basalt fortresses of the Sahyadris. Pune became the military and administrative heart of the Maratha Empire under the hereditary Peshwas, housing the Shaniwar Wada Palace.",
+    era: "Early Modern",
+    kingsRuled: "Chhatrapati Shivaji Maharaj (Patron), Peshwa Balaji Baji Rao (1740-1761), Peshwa Madhavrao I",
+    giTags: ["Puneri Pagadi (Turban)", "Mahabaleshwar Strawberry", "Solapuri Chaddar"]
+  },
+  {
+    id: "murshidabad",
+    name: "Murshidabad Nawab Residence",
+    coordinatesStr: "N 24°11' / E 88°14'",
+    x: 77,
+    y: 41,
+    lat: 24.1850,
+    lng: 88.2481,
+    category: "city",
+    subCategoryText: "Capital of Sovereign Nawabs",
+    details: "Located on the Hooghly branch. It was the wealthy 18th-century capital of Bengal Nawabs, commanding 60% of the early trade with Europe, known for fine ivory carvings and Jamdani silks.",
+    era: "Early Modern",
+    kingsRuled: "Nawab Murshid Quli Khan (1717-1727), Nawab Alivardi Khan, Nawab Siraj-ud-Daulah (1756-1757)",
+    giTags: ["Baluchari Saree", "Nadia Clay Dolls", "Joynagar Moa"]
+  },
+  {
+    id: "varanasi",
+    name: "Kashi (Varanasi)",
+    coordinatesStr: "N 25°19' / E 82°59'",
+    x: 58,
+    y: 37,
+    lat: 25.3176,
+    lng: 83.0062,
+    category: "city",
+    subCategoryText: "Eternal Spiritual City",
+    details: "The oldest continuously inhabited city in India. Situated on the crescent of the Ganges, it was the capital of the ancient Kashi Mahajanapada and has been the capital of Sanskrit scholastic study for millennia.",
+    era: "Ancient",
+    kingsRuled: "King Divodasa (Vedic Epoch), King Ajatashatru (Kashi annex), Mansa Ram of Benares",
+    giTags: ["Banarasi Brocades & Sarees", "Varanasi Glass Beads", "Varanasi Wooden Lacquerware"]
+  },
+  {
+    id: "madurai",
+    name: "Madurai Temple City",
+    coordinatesStr: "N 9°55' / E 78°07'",
+    x: 39,
+    y: 86,
+    lat: 9.9252,
+    lng: 78.1198,
+    category: "city",
+    subCategoryText: "Sangam Capital of the Pandyas",
+    details: "Laid out in the shape of a sacred lotus centered around the Meenakshi Amman Temple. Madurai is the seat of the ancient Tamil Sangam academy and has traded pearls with ancient Rome.",
+    era: "Ancient",
+    kingsRuled: "Nedunjeliyan I (Pandyan, 3rd c. BCE), Tirumalai Nayak (1623-1659)",
+    giTags: ["Madurai Sungudi Saree", "Tirupati Laddu", "Madurai Malli (Jasmine)"]
+  },
+  {
+    id: "kannauj",
+    name: "Kannauj (Kanyakubja)",
+    coordinatesStr: "N 27°03' / E 79°54'",
+    x: 43,
+    y: 33,
+    lat: 27.0553,
+    lng: 79.9133,
+    category: "city",
+    subCategoryText: "Imperial Heartland Tripartite Seat",
+    details: "The highly coveted capital of Northern India. It was the focus of the legendary Tripartite Struggle between the Gurjara-Pratiharas, Rashtrakutas, and Palas. Famed for its traditional attar perfume distillation.",
+    era: "Medieval",
+    kingsRuled: "Emperor Harsha (606-647 CE), King Yashovarman, King Mihira Bhoja (836-885 CE)",
+    giTags: ["Kannauj Perfume (Attar)", "Kanpur Saddlery"]
+  },
+  {
+    id: "gwalior",
+    name: "Gwalior Rock-Fort",
+    coordinatesStr: "N 26°13' / E 78°10'",
+    x: 41,
+    y: 35,
+    lat: 26.2183,
+    lng: 78.1828,
+    category: "fort",
+    subCategoryText: "Gibraltar of India",
+    details: "Built on an isolated sandstone hill. This legendary fortress changed hands between the Hunas, Tomars, Mughals, Marathas, and Scindias. Housing the ornate Man Mandir Palace and Tansen's tomb.",
+    era: "Medieval",
+    kingsRuled: "Raja Man Singh Tomar (1486-1516), Maharaja Mahadji Scindia (1761-1794)",
+    giTags: ["Gwalior Leather Toys", "Chanderi Fabric", "Maheshwar Sarees"]
+  },
+  {
+    id: "lucknow",
+    name: "Lucknow (Awadh)",
+    coordinatesStr: "N 26°50' / E 80°56'",
+    x: 46,
+    y: 34,
+    lat: 26.8467,
+    lng: 80.9462,
+    category: "city",
+    subCategoryText: "Nawabi Court & Culture",
+    details: "Capital of the Nawabs of Awadh, celebrated for its exquisite refinement, courtly etiquette (Adab), and classical Kathak dance patronage. Famous for the magnificent Bara Imambara labyrinth.",
+    era: "Early Modern",
+    kingsRuled: "Asaf-ud-Daula (1775-1797), Wajid Ali Shah (1847-1856)",
+    giTags: ["Lucknow Chikan Craft", "Lucknow Zardozi", "Malihabadi Dussehri Mango"]
+  },
+  {
+    id: "hyderabad",
+    name: "Hyderabad (Golconda)",
+    coordinatesStr: "N 17°23' / E 78°29'",
+    x: 39,
+    y: 66,
+    lat: 17.3850,
+    lng: 78.4867,
+    category: "city",
+    subCategoryText: "Citadel of Nizams & Diamonds",
+    details: "Founded beside the Musi River near the diamond fortress of Golconda. It rose to global fame as a center of pearl trading, Deccani Urdu literature, and wealthy Nizams.",
+    era: "Early Modern",
+    kingsRuled: "Muhammad Quli Qutb Shah (1580-1612), Nizam-ul-Mulk Asaf Jah I (1724-1748)",
+    giTags: ["Hyderabadi Haleem", "Pochampally Ikat", "Gadwal Saree", "Bidriware"]
+  },
+  {
+    id: "srinagar",
+    name: "Srinagar (Kashmir Valley)",
+    coordinatesStr: "N 34°05' / E 74°47'",
+    x: 33,
+    y: 11,
+    lat: 34.0837,
+    lng: 74.7973,
+    category: "city",
+    subCategoryText: "Valley of Mughal Gardens",
+    details: "Located on the banks of the Jhelum River. Founded by Ashoka the Great, it grew into a summer retreat of Mughal emperors who designed legendary Shalimar and Nishat tiered gardens.",
+    era: "Ancient",
+    kingsRuled: "Emperor Ashoka (Founder), King Lalitaditya Muktapida (724-760 CE), Emperor Jahangir (Patron)",
+    giTags: ["Kashmir Saffron", "Kashmir Pashmina", "Kashmir Walnut Wood Carving", "Kashmir Sozani Craft"]
+  },
+  {
+    id: "surat",
+    name: "Port of Surat",
+    coordinatesStr: "N 21°10' / E 72°49'",
+    x: 23,
+    y: 53,
+    lat: 21.1702,
+    lng: 72.8311,
+    category: "city",
+    subCategoryText: "Mughal Gateway to Mecca",
+    details: "The premier 17th-century maritime trading hub on the Tapi River estuary. It handled silk, spices, indigo, and gold bullion, and was the site of the first English trade factory in India.",
+    era: "Early Modern",
+    kingsRuled: "Emperor Akbar (Annexed 1573), Virji Vora (Merchant King, 1619-1670), British East India Company",
+    giTags: ["Surat Zari Craft", "Gir Kesar Mango", "Sankheda Furniture"]
+  },
+  {
+    id: "cochin",
+    name: "Cochin (Kochi)",
+    coordinatesStr: "N 9°55' / E 76°16'",
+    x: 34,
+    y: 85,
+    lat: 9.9312,
+    lng: 76.2673,
+    category: "city",
+    subCategoryText: "Spice Emporium of Malabar",
+    details: "A major port since a massive flood opened its harbor in 1341. It drew Jewish, Christian, Chinese, Arab, and Portuguese traders, becoming the burial site of Vasco da Gama.",
+    era: "Medieval",
+    kingsRuled: "Unni Goda Varma (1500), Portuguese Governors, Dutch VOC, British Resident",
+    giTags: ["Pokkali Rice", "Kasaragod Sarees", "Central Travancore Jaggery"]
+  },
+  {
+    id: "jaunpur",
+    name: "Jaunpur Sultanate",
+    coordinatesStr: "N 25°44' / E 82°41'",
+    x: 56,
+    y: 35,
+    lat: 25.7464,
+    lng: 82.6837,
+    category: "city",
+    subCategoryText: "Shiraz of the East",
+    details: "Founded by Firuz Shah Tughlaq in 1359, it became the capital of the independent Sharqi Dynasty. It emerged as a brilliant center of Sufi culture, Arabic studies, and unique Atala architecture.",
+    era: "Medieval",
+    kingsRuled: "Malik Sarwar (1394-1399), Sultan Ibrahim Shah Sharqi (1402-1440)",
+    giTags: ["Jaunpur Perfumed Oil", "Ghazipur Wall Hanging"]
+  },
+  {
+    id: "calicut",
+    name: "Calicut (Kozhikode)",
+    coordinatesStr: "N 11°15' / E 75°46'",
+    x: 33,
+    y: 82,
+    lat: 11.2588,
+    lng: 75.7804,
+    category: "city",
+    subCategoryText: "Port of the Zamorin",
+    details: "Known as the City of Spices, Calicut was the capital of the independent Zamorin kings who welcomed the arrival of Vasco da Gama in 1498, launching the age of European maritime discoveries.",
+    era: "Medieval",
+    kingsRuled: "Zamorin Manavikrama (Patron, 1498), Hyder Ali (Conquest)",
+    giTags: ["Calicut Halwa", "Wayanad Robusta Coffee"]
+  },
+  {
+    id: "warangal",
+    name: "Warangal (Orugallu)",
+    coordinatesStr: "N 17°58' / E 79°35'",
+    x: 41,
+    y: 65,
+    lat: 17.9689,
+    lng: 79.5941,
+    category: "city",
+    subCategoryText: "Stone Archways of Kakatiyas",
+    details: "The monumental capital of the Kakatiya Dynasty, surrounded by a double wall of stone and earth. Famed for its single-stone arches (Keerthi Thoranas) and Thousand Pillar Temple.",
+    era: "Medieval",
+    kingsRuled: "Rudradeva (1158-1195), Rani Rudrama Devi (1262-1289), Prataparudra",
+    giTags: ["Warangal Durries", "Pembarthi Metal Craft", "Cheriyal Scroll Paintings"]
+  },
+  {
+    id: "chidambaram",
+    name: "Chidambaram (Nataraja)",
+    coordinatesStr: "N 11°23' / E 79°41'",
+    x: 42,
+    y: 82,
+    lat: 11.3980,
+    lng: 79.6954,
+    category: "city",
+    subCategoryText: "Chola Temple of Cosmic Dance",
+    details: "The sacred site of the Thillai Nataraja Temple, depicting Shiva as the Cosmic Dancer. Visited by Chola and Pandya monarchs who gold-plated its central shrine roof.",
+    era: "Medieval",
+    kingsRuled: "Parantaka Chola I (907-955 CE), Jatavarman Sundara Pandyan",
+    giTags: ["Bhuvanagiri Silk Sarees", "Thanjavur Art Plates"]
+  },
+  {
+    id: "mahabalipuram",
+    name: "Mahabalipuram (Mamallapuram)",
+    coordinatesStr: "N 12°37' / E 80°11'",
+    x: 43,
+    y: 80,
+    lat: 12.6198,
+    lng: 80.1931,
+    category: "city",
+    subCategoryText: "Pallava Seaport & monoliths",
+    details: "A bustling 7th-century Pallava port facing the Bay of Bengal, featuring monolith rathas (chariots), rock-cut mandapas, and the majestic Shore Temple.",
+    era: "Ancient",
+    kingsRuled: "Narasimhavarman I Mamalla (630-668 CE), Narasimhavarman II",
+    giTags: ["Mahabalipuram Stone Sculpture", "Pattamadai Mat"]
+  },
+  {
+    id: "amer",
+    name: "Amber (Amer) Fort",
+    coordinatesStr: "N 26°59' / E 75°51'",
+    x: 32,
+    y: 31,
+    lat: 26.9855,
+    lng: 75.8513,
+    category: "fort",
+    subCategoryText: "Kachwaha Rajput Palace",
+    details: "Overlooking the Maota Lake. This majestic high fortress served as the capital of the Kachwaha Rajputs before Jaipur was founded, showcasing exquisite mirror work (Sheesh Mahal).",
+    era: "Early Modern",
+    kingsRuled: "Raja Man Singh I (1589-1614), Mirza Raja Jai Singh I",
+    giTags: ["Sanganeri Hand Block Print", "Kota Doria Sarees"]
+  },
+  {
+    id: "bidar",
+    name: "Bidar Fortress",
+    coordinatesStr: "N 17°54' / E 77°31'",
+    x: 37,
+    y: 65,
+    lat: 17.9120,
+    lng: 77.5181,
+    category: "fort",
+    subCategoryText: "Bahmani & Barid Shahi Crown",
+    details: "Built of dark basalt stone, Bidar Fortress features an exceptional medieval water system (Karez). It was the capital of the Bahmani Sultanate and the Barid Shahi dynasty.",
+    era: "Medieval",
+    kingsRuled: "Ahmad Shah I Wali (1422-1436), Mahmud Gawan (Regent)",
+    giTags: ["Bidriware (Silver Inlay on Zinc)", "Udupi Handloom Sarees"]
+  },
+  {
+    id: "nalanda",
+    name: "Nalanda University Ruins",
+    coordinatesStr: "N 25°07' / E 85°24'",
+    x: 63,
+    y: 36,
+    lat: 25.1200,
+    lng: 85.4124,
+    category: "city",
+    subCategoryText: "Ancient Buddhist Mahavihara",
+    details: "The premier ancient residential university of the Buddhist world, drawing scholars from China, Korea, Tibet, and Central Asia. It possessed massive libraries containing millions of scrolls.",
+    era: "Ancient",
+    kingsRuled: "Kumaragupta I (415-455 CE), Harshavardhana (Patron), Devapala (Pala Empire)",
+    giTags: ["Applique (Khatwa) Work of Bihar", "Bhagalpuri Silk"]
   },
   {
     id: "ganges",
@@ -107,7 +491,8 @@ export const INDIA_LOCATIONS: PresetLocation[] = [
     lng: 83.0062,
     category: "river",
     subCategoryText: "Imperial Lifeline Watershed",
-    details: "Sourced from the Gangotri glacier in high Himalaya, this grand river forms the fertile agricultural core of India. It has nurtured civilizations, sacred ghats like Varanasi, and grand empires for three millennia."
+    details: "Sourced from the Gangotri glacier in high Himalaya, this grand river forms the fertile agricultural core of India. It has nurtured civilizations, sacred ghats like Varanasi, and grand empires for three millennia.",
+    era: "Ancient"
   },
   {
     id: "indus",
@@ -119,7 +504,8 @@ export const INDIA_LOCATIONS: PresetLocation[] = [
     lng: 72.5000,
     category: "river",
     subCategoryText: "Cradle of Empires",
-    details: "Drawing its waters from Tibet, the Indus flows past Gilgit and Punjab, feeding five rivers into Sindh's dry planes. It is the linguistic origin of the name 'India' and host to the oldest civilizations."
+    details: "Drawing its waters from Tibet, the Indus flows past Gilgit and Punjab, feeding five rivers into Sindh's dry planes. It is the linguistic origin of the name 'India' and host to the oldest civilizations.",
+    era: "Ancient"
   },
   {
     id: "brahmaputra",
@@ -131,7 +517,8 @@ export const INDIA_LOCATIONS: PresetLocation[] = [
     lng: 91.7300,
     category: "river",
     subCategoryText: "Sovereign Eastern River",
-    details: "Known as the Yarlung Tsangpo in Tibet, it bursts through deep Himalayan gorges into the plains of Assam. Red with iron-rich silt, it creates massive fertile deltas on its journey to join the Ganges."
+    details: "Known as the Yarlung Tsangpo in Tibet, it bursts through deep Himalayan gorges into the plains of Assam. Red with iron-rich silt, it creates massive fertile deltas on its journey to join the Ganges.",
+    era: "Medieval"
   },
   {
     id: "godavari",
@@ -143,7 +530,8 @@ export const INDIA_LOCATIONS: PresetLocation[] = [
     lng: 81.7800,
     category: "river",
     subCategoryText: "The Southern Gange",
-    details: "The longest river in South India, flowing eastward across the Deccan Plateau from its Western Ghats origin in Trimbakeshwar. It creates a vast, highly fertile agricultural delta on the Coromandel coast."
+    details: "The longest river in South India, flowing eastward across the Deccan Plateau from its Western Ghats origin in Trimbakeshwar. It creates a vast, highly fertile agricultural delta on the Coromandel coast.",
+    era: "Ancient"
   },
   {
     id: "himalayas",
@@ -155,7 +543,8 @@ export const INDIA_LOCATIONS: PresetLocation[] = [
     lng: 79.0000,
     category: "mountain",
     subCategoryText: "The Snowy Crown Bastion",
-    details: "The youngest and tallest mountains on Earth, acting as an impassable climatic and military wall guarding the Indian peninsula from freeze-winds and Central Asian hordes alike."
+    details: "The youngest and tallest mountains on Earth, acting as an impassable climatic and military wall guarding the Indian peninsula from freeze-winds and Central Asian hordes alike.",
+    era: "Ancient"
   },
   {
     id: "western_ghats",
@@ -167,7 +556,8 @@ export const INDIA_LOCATIONS: PresetLocation[] = [
     lng: 74.1600,
     category: "mountain",
     subCategoryText: "The Sahyadri Cloud Forests",
-    details: "An ancient mountain wall running parallel to India's west coast. It blocks moisture-laden monsoons, feeding peninsular rivers and providing high basalt peaks ideal for Maratha mountain garrisons."
+    details: "An ancient mountain wall running parallel to India's west coast. It blocks moisture-laden monsoons, feeding peninsular rivers and providing high basalt peaks ideal for Maratha mountain garrisons.",
+    era: "Ancient"
   },
   {
     id: "deccan_plateau",
@@ -179,7 +569,8 @@ export const INDIA_LOCATIONS: PresetLocation[] = [
     lng: 77.0000,
     category: "plateau",
     subCategoryText: "Basalt Peninsula Uplands",
-    details: "A massive triangular tableland bounded by the Western and Eastern Ghats. Rich in black volcanic soil ideal for cotton, its fortified hills became iconic strongholds for the Deccan Sultanates."
+    details: "A massive triangular tableland bounded by the Western and Eastern Ghats. Rich in black volcanic soil ideal for cotton, its fortified hills became iconic strongholds for the Deccan Sultanates.",
+    era: "Medieval"
   },
   {
     id: "gangetic_plains",
@@ -191,7 +582,8 @@ export const INDIA_LOCATIONS: PresetLocation[] = [
     lng: 81.0000,
     category: "plain",
     subCategoryText: "Ancient Heartland Basin",
-    details: "A colossal, flat alluvial plain fed by the Ganges-Yamuna system. It contains the highest population density, supporting agrarian empires from Maurya and Gupta dynasties down to the modern epoch."
+    details: "A colossal, flat alluvial plain fed by the Ganges-Yamuna system. It contains the highest population density, supporting agrarian empires from Maurya and Gupta dynasties down to the modern epoch.",
+    era: "Ancient"
   }
 ];
 
@@ -206,7 +598,10 @@ export const WORLD_LOCATIONS: PresetLocation[] = [
     lng: -0.1278,
     category: "city",
     subCategoryText: "Imperial Industrial Sovereign",
-    details: "Sited along the tidal River Thames. From Roman 'Londinium' to the pivot of the 18th-century industrial and naval empire, holding the Royal Society archives and global trading cables."
+    details: "Sited along the tidal River Thames. From Roman 'Londinium' to the pivot of the 18th-century industrial and naval empire, holding the Royal Society archives and global trading cables.",
+    era: "Modern",
+    kingsRuled: "Elizabeth I (1558-1603), Queen Victoria (1837-1901)",
+    giTags: ["London Dry Gin", "Harris Tweed"]
   },
   {
     id: "rome",
@@ -218,7 +613,10 @@ export const WORLD_LOCATIONS: PresetLocation[] = [
     lng: 12.4964,
     category: "city",
     subCategoryText: "Forum of Hand-Carved Marble",
-    details: "Nurtured on the seven hills beside the Tiber River. It grew into the ultimate model of European military and civil administration. Landmark ruins of law-givers, Aqueducts, and Senate stone."
+    details: "Nurtured on the seven hills beside the Tiber River. It grew into the ultimate model of European military and civil administration. Landmark ruins of law-givers, Aqueducts, and Senate stone.",
+    era: "Ancient",
+    kingsRuled: "Julius Caesar (49-44 BCE), Emperor Augustus (27 BCE - 14 CE), Constantine the Great",
+    giTags: ["Prosciutto di Parma", "Parmigiano Reggiano"]
   },
   {
     id: "cairo",
@@ -230,7 +628,10 @@ export const WORLD_LOCATIONS: PresetLocation[] = [
     lng: 31.2357,
     category: "city",
     subCategoryText: "Gateway of Dynastic Sands",
-    details: "Commanding the apex of the fertile Nile Delta. Cairo has witnessed millenniums of crowns, from ancient Pharaohs at nearby Memphis to Islamic scholars at the magnificent Al-Azhar Mosque."
+    details: "Commanding the apex of the fertile Nile Delta. Cairo has witnessed millenniums of crowns, from ancient Pharaohs at nearby Memphis to Islamic scholars at the magnificent Al-Azhar Mosque.",
+    era: "Medieval",
+    kingsRuled: "Saladin (Ayyubid Sultan, 1174-1193), Baibars (Mamluk Sultan)",
+    giTags: ["Egyptian Giza Cotton", "Fayoum Pottery"]
   },
   {
     id: "kyoto",
@@ -242,7 +643,10 @@ export const WORLD_LOCATIONS: PresetLocation[] = [
     lng: 135.7681,
     category: "city",
     subCategoryText: "Seat of the Chrysanthemum Throne",
-    details: "The thousands-years capital of Japan, nestled inside mountains. It served as the ultimate canvas of scholarly aesthetics, zen gardens, hand-painted screens, and Imperial court ritualism."
+    details: "The thousands-years capital of Japan, nestled inside mountains. It served as the ultimate canvas of scholarly aesthetics, zen gardens, hand-painted screens, and Imperial court ritualism.",
+    era: "Medieval",
+    kingsRuled: "Emperor Kammu (781-806 CE), Shogun Ashikaga Yoshimitsu, Oda Nobunaga",
+    giTags: ["Nishijin-ori Silk Textiles", "Uji Uji-cha Green Tea", "Kyo-yaki Ceramics"]
   },
   {
     id: "istanbul",
@@ -254,7 +658,10 @@ export const WORLD_LOCATIONS: PresetLocation[] = [
     lng: 28.9784,
     category: "city",
     subCategoryText: "Bridge of Two Continents",
-    details: "Overlooking the golden horn of the Bosporus. It transitioned from Byzantine Christianity's heart to the Ottoman Empire's magnificent sovereign throne, controlling the Spice Road flows."
+    details: "Overlooking the golden horn of the Bosporus. It transitioned from Byzantine Christianity's heart to the Ottoman Empire's magnificent sovereign throne, controlling the Spice Road flows.",
+    era: "Medieval",
+    kingsRuled: "Constantine the Great (306-337 CE), Emperor Justinian I, Sultan Mehmed II the Conqueror (1451-1481)",
+    giTags: ["Turkish Carpet", "Turkish Lokum Delight"]
   },
   {
     id: "beijing",
@@ -266,7 +673,10 @@ export const WORLD_LOCATIONS: PresetLocation[] = [
     lng: 116.4074,
     category: "city",
     subCategoryText: "Qing Dynasty Palace Grounds",
-    details: "The monumental heart of the Middle Kingdom, built with symmetrical celestial grids. Surrounded by grand moats, high crimson walls, and gold-glazed tiles harboring the Son of Heaven."
+    details: "The monumental heart of the Middle Kingdom, built with symmetrical celestial grids. Surrounded by grand moats, high crimson walls, and gold-glazed tiles harboring the Son of Heaven.",
+    era: "Early Modern",
+    kingsRuled: "Yongle Emperor (Ming, 1402-1424), Kangxi Emperor (Qing, 1661-1722), Qianlong Emperor",
+    giTags: ["Peking Duck", "Jingdezhen Porcelain", "Yixing Purple Clay Teapots"]
   },
   {
     id: "cuzco",
@@ -278,7 +688,10 @@ export const WORLD_LOCATIONS: PresetLocation[] = [
     lng: -71.9675,
     category: "city",
     subCategoryText: "Inca Administrative Center",
-    details: "Laid out in the shape of a sacred puma at 11,000 feet. Cuzco is an architectural marvel of interlocking, dry-stone ashlar masonry capable of withstanding the fiercest Andes tremors."
+    details: "Laid out in the shape of a sacred puma at 11,000 feet. Cuzco is an architectural marvel of interlocking, dry-stone ashlar masonry capable of withstanding the fiercest Andes tremors.",
+    era: "Medieval",
+    kingsRuled: "Pachacuti Inca Yupanqui (1438-1471), Huayna Capac, Atahualpa",
+    giTags: ["Peruvian Alpaca Fibre", "Cusco Giant Corn"]
   },
   {
     id: "paris",
@@ -290,7 +703,310 @@ export const WORLD_LOCATIONS: PresetLocation[] = [
     lng: 2.3522,
     category: "city",
     subCategoryText: "Capital of Philosophy & Art",
-    details: "Resting on the curves of the Seine River. The epicenter of the Age of Enlightenment, Gothic spires, and Napoleonic grand plans, reshaping global politics and standard map science."
+    details: "Resting on the curves of the Seine River. The epicenter of the Age of Enlightenment, Gothic spires, and Napoleonic grand plans, reshaping global politics and standard map science.",
+    era: "Early Modern",
+    kingsRuled: "King Louis XIV (The Sun King, 1643-1715), Napoleon Bonaparte (1804-1814)",
+    giTags: ["Champagne Sparkle", "Roquefort Cheese", "Cognac Spirit"]
+  },
+  {
+    id: "athens",
+    name: "Classical Athens",
+    coordinatesStr: "N 37°59' / E 23°43'",
+    x: 49,
+    y: 35,
+    lat: 37.9838,
+    lng: 23.7275,
+    category: "city",
+    subCategoryText: "Cradle of Western Democracy",
+    details: "Framed by the Acropolis, this ancient city-state pioneered democratic assemblies, philosophy, theater, and classical Greek architecture, trading olive oil and silver across the Mediterranean.",
+    era: "Ancient",
+    kingsRuled: "Solon the Lawgiver (594 BCE), Pericles (Golden Age, 461-429 BCE)",
+    giTags: ["Kalamata Olive Oil", "Feta Cheese of Greece"]
+  },
+  {
+    id: "alexandria",
+    name: "Alexandria ad Aegyptum",
+    coordinatesStr: "N 31°12' / E 29°55'",
+    x: 52,
+    y: 39,
+    lat: 31.2001,
+    lng: 29.9187,
+    category: "city",
+    subCategoryText: "Intellectual beacon of the Nile",
+    details: "Founded by Alexander the Great, this premier Ptolemaic seaport housed the legendary Great Library of Alexandria and the Pharos Lighthouse, one of the Seven Wonders of the Ancient World.",
+    era: "Ancient",
+    kingsRuled: "Ptolemy I Soter (305-282 BCE), Cleopatra VII Philopator (51-30 BCE)",
+    giTags: ["Alexandrian Premium Cotton", "Egyptian Dates"]
+  },
+  {
+    id: "baghdad",
+    name: "Baghdad (Abbasid Seat)",
+    coordinatesStr: "N 33°19' / E 44°22'",
+    x: 55,
+    y: 38,
+    lat: 33.3152,
+    lng: 44.3661,
+    category: "city",
+    subCategoryText: "House of Wisdom (Bayt al-Hikma)",
+    details: "Designed as a perfectly circular fortress city by the Tigris River. It was the wealthy capital of the Abbasid Golden Age, preserving and translating ancient philosophical texts.",
+    era: "Medieval",
+    kingsRuled: "Caliph Al-Mansur (762-775 CE), Harun al-Rashid (786-809 CE)",
+    giTags: ["Baghdad Silk Tapestry", "Mesopotamian Date Paste"]
+  },
+  {
+    id: "xian",
+    name: "Chang'an (Xi'an)",
+    coordinatesStr: "N 34°20' / E 108°56'",
+    x: 75,
+    y: 37,
+    lat: 34.3416,
+    lng: 108.9398,
+    category: "city",
+    subCategoryText: "Silk Road Eastern Terminus",
+    details: "The majestic capital of the Han and Tang dynasties. It served as a global metropolis of trade, foreign envoys, and scholars, hosting the massive Terracotta Army mausoleum.",
+    era: "Ancient",
+    kingsRuled: "Qin Shi Huang (221-210 BCE), Emperor Wu of Han (141-87 BCE), Emperor Taizong of Tang",
+    giTags: ["Shaanxi Apple", "Xi'an Green Jade Ware", "Qin Silk Embroidery"]
+  },
+  {
+    id: "venice",
+    name: "Serenissima Venice",
+    coordinatesStr: "N 45°26' / E 12°19'",
+    x: 46,
+    y: 31,
+    lat: 45.4408,
+    lng: 12.3155,
+    category: "city",
+    subCategoryText: "Republic of Maritime Commerce",
+    details: "Built on 118 marshy islands in the Venetian Lagoon. This formidable naval power monopolized European trade with the Levant, funding exquisite Gothic-Byzantine architecture.",
+    era: "Medieval",
+    kingsRuled: "Doge Enrico Dandolo (1192-1205), Doge Leonardo Loredan",
+    giTags: ["Murano Glass", "Burano Lace", "Prosecco of Veneto"]
+  },
+  {
+    id: "samarkand",
+    name: "Samarkand (Sogdian Node)",
+    coordinatesStr: "N 39°39' / E 66°57'",
+    x: 61,
+    y: 35,
+    lat: 39.6542,
+    lng: 66.9597,
+    category: "city",
+    subCategoryText: "The Turquoise Jewel of the Steppe",
+    details: "A central Silk Road oasis city at the crossroads of Persian, Chinese, and Indian civilizations. It became the magnificent monumental capital of the Timurid Empire.",
+    era: "Medieval",
+    kingsRuled: "Sogdian Princes, Timur (Tamerlane, 1370-1405), Ulugh Beg (Astronomer King)",
+    giTags: ["Samarkand Silk Paper", "Uzbek Karakul Pelt", "Samarkand Flatbread (Patir)"]
+  },
+  {
+    id: "isfahan",
+    name: "Isfahan (Half the World)",
+    coordinatesStr: "N 32°39' / E 51°40'",
+    x: 57,
+    y: 38,
+    lat: 32.6546,
+    lng: 51.6680,
+    category: "city",
+    subCategoryText: "Safavid Persian Jewel",
+    details: "Famous for its stunning Islamic tiled domes, sprawling Naqsh-e Jahan Square, and arched river bridges. It served as the artistic and diplomatic capital of Safavid Persia.",
+    era: "Early Modern",
+    kingsRuled: "Shah Abbas I the Great (1587-1629), Shah Safi, Shah Soltan Hosseyn",
+    giTags: ["Isfahan Persian Carpet", "Persian Saffron", "Isfahan Gaz Candy"]
+  },
+  {
+    id: "carthage",
+    name: "Punic Carthage",
+    coordinatesStr: "N 36°51' / E 10°19'",
+    x: 46,
+    y: 36,
+    lat: 36.8529,
+    lng: 10.3217,
+    category: "city",
+    subCategoryText: "Maritime Empire of North Africa",
+    details: "Founded by Phoenician settlers. This dominant naval power of the Western Mediterranean possessed a unique circular military harbor (Cothon) before its destruction by Rome in the Punic Wars.",
+    era: "Ancient",
+    kingsRuled: "Queen Dido (Founder), Hamilcar Barca (General), Hannibal Barca (247-183 BCE)",
+    giTags: ["Nabeul Harissa Paste", "Tunisian Olive Oil"]
+  },
+  {
+    id: "timbuktu",
+    name: "Timbuktu Scholastic Hub",
+    coordinatesStr: "N 16°46' / W 3°00'",
+    x: 39,
+    y: 47,
+    lat: 16.7666,
+    lng: -3.0026,
+    category: "city",
+    subCategoryText: "Sankore Islamic University",
+    details: "A legendary desert oasis on the Niger River loop. It grew exceedingly wealthy on the trans-Saharan salt-and-gold trade, hosting hundreds of thousands of handwritten manuscripts.",
+    era: "Medieval",
+    kingsRuled: "Mansa Musa I of Mali (1312-1337), Askia Mohammad I (Songhai Empire)",
+    giTags: ["Timbuktu Manuscripts", "Mali Tuareg Leathercraft"]
+  },
+  {
+    id: "granada",
+    name: "Alhambra of Granada",
+    coordinatesStr: "N 37°10' / W 3°35'",
+    x: 41,
+    y: 35,
+    lat: 37.1773,
+    lng: -3.5986,
+    category: "city",
+    subCategoryText: "Nasrid Palace of Water & Light",
+    details: "Sited beneath the Sierra Nevada peaks. This fortress-palace was the final Moorish sultanate on the Iberian Peninsula, celebrated for its geometric arabesque plasterwork and courtyards.",
+    era: "Medieval",
+    kingsRuled: "Ibn al-Ahmar (Founder, 1238), Muhammad V (Builder), Muhammad XII (Boabdil, 1482-1492)",
+    giTags: ["Fajalauza Granada Ceramics", "Jamon Trevelez"]
+  },
+  {
+    id: "babylon",
+    name: "Imperial Babylon",
+    coordinatesStr: "N 32°32' / E 44°25'",
+    x: 55,
+    y: 38,
+    lat: 32.5430,
+    lng: 44.4244,
+    category: "city",
+    subCategoryText: "Ishtar Gate & Hanging Gardens",
+    details: "The colossal ancient capital of southern Mesopotamia. Famously fortified by massive glazed brick walls and the legendary Tower of Babel beside the Euphrates River.",
+    era: "Ancient",
+    kingsRuled: "Hammurabi (1792-1750 BCE), Nebuchadnezzar II (605-562 BCE), Alexander the Great",
+    giTags: ["Mesopotamian Clay Tablet Replicas", "Babylonian Date Palms"]
+  },
+  {
+    id: "lhasa",
+    name: "Sacred Lhasa",
+    coordinatesStr: "N 29°39' / E 91°07'",
+    x: 71,
+    y: 38,
+    lat: 29.6524,
+    lng: 91.1172,
+    category: "city",
+    subCategoryText: "Potala Palace of Dalai Lamas",
+    details: "Built on Red Mountain in the Lhasa Valley. The spiritual and political center of Tibetan Buddhism, featuring the massive Potala Palace constructed at an altitude of 12,000 feet.",
+    era: "Medieval",
+    kingsRuled: "Songtsen Gampo (618-650 CE), Ngawang Lobsang Gyatso (5th Dalai Lama, 1642-1682)",
+    giTags: ["Tibetan Carpets", "Lhasa Yak Cheese", "Tibetan Incense"]
+  },
+  {
+    id: "florence",
+    name: "Florence (Arno Bank)",
+    coordinatesStr: "N 43°46' / E 11°15'",
+    x: 46,
+    y: 32,
+    lat: 43.7696,
+    lng: 11.2558,
+    category: "city",
+    subCategoryText: "Cradle of the Renaissance",
+    details: "The wealthy trading and banking city-state on the Arno River. It pioneered banking innovations and sponsored masters like Michelangelo, Da Vinci, and Brunelleschi.",
+    era: "Medieval",
+    kingsRuled: "Cosimo de' Medici (1434-1464), Lorenzo the Magnificent (1469-1492)",
+    giTags: ["Toscano Olive Oil", "Chianti Wine", "Florentine Leatherware"]
+  },
+  {
+    id: "lisbon",
+    name: "Lisbon (Tagus Estuary)",
+    coordinatesStr: "N 38°43' / W 9°08'",
+    x: 40,
+    y: 34,
+    lat: 38.7223,
+    lng: -9.1393,
+    category: "city",
+    subCategoryText: "Launchpad of Maritime Caravel fleets",
+    details: "Sited where the Tagus River spills into the Atlantic. Lisbon became a rich, spice-fueled capital of global navigation, financing maritime fleets bound for Africa and Asia.",
+    era: "Early Modern",
+    kingsRuled: "King Manuel I (1495-1521), King John V (1706-1750)",
+    giTags: ["Pastel de Belem Tart", "Porto Wine of Portugal"]
+  },
+  {
+    id: "cordoba",
+    name: "Cordoba (Guadalquivir Basin)",
+    coordinatesStr: "N 37°53' / W 4°46'",
+    x: 41,
+    y: 34,
+    lat: 37.8882,
+    lng: -4.7794,
+    category: "city",
+    subCategoryText: "Umayyad Caliphate of Cordoba",
+    details: "Famous for its spectacular Great Mosque (Mezquita) with red-and-white arches. Cordoba was the most advanced intellectual capital of 10th-century Europe, containing massive book vaults.",
+    era: "Medieval",
+    kingsRuled: "Abd al-Rahman I (756-788 CE), Abd al-Rahman III (912-961 CE), Al-Hakam II",
+    giTags: ["Cordovan Fine Leather", "Andalucia Extra Virgin Olive Oil"]
+  },
+  {
+    id: "nanjing",
+    name: "Imperial Nanjing",
+    coordinatesStr: "N 32°03' / E 118°47'",
+    x: 77,
+    y: 36,
+    lat: 32.0603,
+    lng: 118.7969,
+    category: "city",
+    subCategoryText: "Southern Capital of Ming",
+    details: "Sited along the lower Yangtze River. Nanjing was one of China's grand ancient capitals, fortified by the longest brick city wall ever built, constructed by the founding Ming emperor.",
+    era: "Medieval",
+    kingsRuled: "Hongwu Emperor (Zhu Yuanzhang, 1368-1398), Sun Yat-sen (Modern President)",
+    giTags: ["Nanjing Yunjin Brocade", "Nanjing Pressed Duck"]
+  },
+  {
+    id: "teotihuacan",
+    name: "Teotihuacan (Valley of Gods)",
+    coordinatesStr: "N 19°41' / W 98°50'",
+    x: 18,
+    y: 53,
+    lat: 19.6925,
+    lng: -98.8435,
+    category: "city",
+    subCategoryText: "Pyramids of Sun & Moon",
+    details: "A massive, meticulously planned grid-city containing towering pyramids. Constructed on the Avenue of the Dead by a mysterious ancient society centuries before the Aztecs arrived.",
+    era: "Ancient",
+    kingsRuled: "Priestly Dynasties (Names lost to history)",
+    giTags: ["Teotihuacan Obsidian Carving", "Mexican Mezcal"]
+  },
+  {
+    id: "ankgor",
+    name: "Angkor (Khmer Heart)",
+    coordinatesStr: "N 13°24' / E 103°52'",
+    x: 79,
+    y: 54,
+    lat: 13.4125,
+    lng: 103.8670,
+    category: "city",
+    subCategoryText: "Hydrological Temple Network",
+    details: "The monumental capital of the Khmer Empire, boasting sophisticated water reservoirs (Barays) and the grand temple-mountain of Angkor Wat dedicated to Vishnu and Shiva.",
+    era: "Medieval",
+    kingsRuled: "Suryavarman II (1113-1150 CE), Jayavarman VII (1181-1218 CE)",
+    giTags: ["Cambodian Golden Silk Fabrics", "Kampot Pepper"]
+  },
+  {
+    id: "marrakesh",
+    name: "Red City of Marrakesh",
+    coordinatesStr: "N 31°37' / W 7°58'",
+    x: 40,
+    y: 40,
+    lat: 31.6295,
+    lng: -7.9811,
+    category: "city",
+    subCategoryText: "Imperial Citadel of Almoravids",
+    details: "Surrounded by high ramparts of beaten red clay, Marrakesh was founded at the base of the Atlas Mountains as a military capital, commanding trans-Saharan trade caravans.",
+    era: "Medieval",
+    kingsRuled: "Yusuf ibn Tashfin (1061-1106), Sultan Abu Yaqub Yusuf",
+    giTags: ["Moroccan Argan Oil", "Marrakesh Leather Babouche"]
+  },
+  {
+    id: "vienna",
+    name: "Vienna (Danube Capital)",
+    coordinatesStr: "N 48°12' / E 16°22'",
+    x: 46,
+    y: 30,
+    lat: 48.2082,
+    lng: 16.3738,
+    category: "city",
+    subCategoryText: "Habsburg Imperial Residence",
+    details: "Situated on the Danube River. Vienna served as the brilliant capital of the Habsburg dynasty, holding the Holy Roman Empire treasure archives and hosting the finest classical composers.",
+    era: "Early Modern",
+    kingsRuled: "Emperor Maximilian I (1493-1519), Empress Maria Theresa (1740-1780)",
+    giTags: ["Viennese Sachertorte Cake", "Austrian Riesling"]
   },
   {
     id: "nile",
@@ -302,7 +1018,8 @@ export const WORLD_LOCATIONS: PresetLocation[] = [
     lng: 33.1600,
     category: "river",
     subCategoryText: "Father of River Valleys",
-    details: "The longest river in the world, originating in East Africa's lakes and flowing north into the Mediterranean. Its black alluvial mud deposits sustained dynasties, calendar calculations, and papyrus harvesting."
+    details: "The longest river in the world, originating in East Africa's lakes and flowing north into the Mediterranean. Its black alluvial mud deposits sustained dynasties, calendar calculations, and papyrus harvesting.",
+    era: "Ancient"
   },
   {
     id: "amazon",
@@ -314,7 +1031,8 @@ export const WORLD_LOCATIONS: PresetLocation[] = [
     lng: -60.0300,
     category: "river",
     subCategoryText: "Watershed of the Equator",
-    details: "A gargantuan river flowing through dense, untamed rainforests. It carries more water volume than the top seven rivers combined, fueling legends of hidden gold citadels like El Dorado."
+    details: "A gargantuan river flowing through dense, untamed rainforests. It carries more water volume than the top seven rivers combined, fueling legends of hidden gold citadels like El Dorado.",
+    era: "Ancient"
   },
   {
     id: "yangtze",
@@ -326,7 +1044,8 @@ export const WORLD_LOCATIONS: PresetLocation[] = [
     lng: 112.0000,
     category: "river",
     subCategoryText: "Empire-Unifying Waterway",
-    details: "Spanning from Tibet to the East China Sea. It is the historic cultural divide between Northern wheat regions and Southern rice empires, hosting massive transport fleets and old poets."
+    details: "Spanning from Tibet to the East China Sea. It is the historic cultural divide between Northern wheat regions and Southern rice empires, hosting massive transport fleets and old poets.",
+    era: "Ancient"
   },
   {
     id: "the_alps",
@@ -338,7 +1057,8 @@ export const WORLD_LOCATIONS: PresetLocation[] = [
     lng: 10.0000,
     category: "mountain",
     subCategoryText: "Snow Peak European Wall",
-    details: "A crescent peak chain defining Europe's climate, culture, and high passes. Hannibal crossed its freezing heights with war elephants, and castle fiefdoms guarded its deep merchant tunnels."
+    details: "A crescent peak chain defining Europe's climate, culture, and high passes. Hannibal crossed its freezing heights with war elephants, and castle fiefdoms guarded its deep merchant tunnels.",
+    era: "Ancient"
   },
   {
     id: "the_andes",
@@ -350,7 +1070,8 @@ export const WORLD_LOCATIONS: PresetLocation[] = [
     lng: -70.0000,
     category: "mountain",
     subCategoryText: "Spine of South America",
-    details: "The longest continental mountain range, forming an immense high altitudes wall along the Pacific coast, keeping clouds, hosting terrace farming, and creating unique micro-climates."
+    details: "The longest continental mountain range, forming an immense high altitudes wall along the Pacific coast, keeping clouds, hosting terrace farming, and creating unique micro-climates.",
+    era: "Ancient"
   },
   {
     id: "sahara",
@@ -362,7 +1083,8 @@ export const WORLD_LOCATIONS: PresetLocation[] = [
     lng: 11.0000,
     category: "plain",
     subCategoryText: "The Amber Sea of Dunes",
-    details: "A massive expanse of sand, rock, and ancient salt basins larger than the United States. Navigated by Tuareg salt-caravans using celestial navigation and camels—the ships of the desert."
+    details: "A massive expanse of sand, rock, and ancient salt basins larger than the United States. Navigated by Tuareg salt-caravans using celestial navigation and camels—the ships of the desert.",
+    era: "Ancient"
   },
   {
     id: "tibetan_plateau",
@@ -374,7 +1096,8 @@ export const WORLD_LOCATIONS: PresetLocation[] = [
     lng: 87.0000,
     category: "plateau",
     subCategoryText: "The Roof of the World",
-    details: "An immense, frozen high plateau bordered by the giant peaks of the Himalayas. It serves as the primary water-tower for over three billion humans, fueling Asia's largest river routes."
+    details: "An immense, frozen high plateau bordered by the giant peaks of the Himalayas. It serves as the primary water-tower for over three billion humans, fueling Asia's largest river routes.",
+    era: "Ancient"
   },
   {
     id: "eurasian_steppes",
@@ -386,6 +1109,7 @@ export const WORLD_LOCATIONS: PresetLocation[] = [
     lng: 65.0000,
     category: "plain",
     subCategoryText: "Nomad Grassland Corridors",
-    details: "A flat belt of grasslands spanning from Hungary to Manchuria. It served as a nomadic superhighway for Scythians, Huns, and the golden hordes of Genghis Khan riding high-velocity ponies."
+    details: "A flat belt of grasslands spanning from Hungary to Manchuria. It served as a nomadic superhighway for Scythians, Huns, and the golden hordes of Genghis Khan riding high-velocity ponies.",
+    era: "Ancient"
   }
 ];

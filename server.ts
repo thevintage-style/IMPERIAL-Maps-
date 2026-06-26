@@ -24,6 +24,33 @@ function getGoogleGenAI(): GoogleGenAI | null {
   });
 }
 
+// Helper to call ai.models.generateContent with retries on transient errors (429 and 503)
+async function generateContentWithRetry(aiClient: GoogleGenAI, model: string, contents: any, config: any, maxRetries = 3) {
+  let delay = 1000; // start with 1 second delay
+  for (let attempt = 1; attempt <= maxRetries; attempt++) {
+    try {
+      return await aiClient.models.generateContent({
+        model,
+        contents,
+        config
+      });
+    } catch (error: any) {
+      const errorMsg = String(error?.message || error || "");
+      const isRateLimit = errorMsg.includes("429") || errorMsg.toLowerCase().includes("resource_exhausted") || errorMsg.toLowerCase().includes("quota");
+      const isTransient503 = errorMsg.includes("503") || errorMsg.toLowerCase().includes("overloaded") || errorMsg.toLowerCase().includes("high demand") || errorMsg.toLowerCase().includes("unavailable");
+      
+      if ((isRateLimit || isTransient503) && attempt < maxRetries) {
+        console.log(`[Gemini Retry] Attempt ${attempt} of ${maxRetries} failed with transient error: ${errorMsg.slice(0, 100)}. Retrying in ${delay}ms...`);
+        await new Promise((resolve) => setTimeout(resolve, delay));
+        delay *= 2; // exponential backoff
+      } else {
+        throw error;
+      }
+    }
+  }
+  throw new Error("Max retries reached");
+}
+
 async function startServer() {
   const app = express();
   const PORT = 3000;
@@ -216,10 +243,11 @@ async function startServer() {
         }
       `;
 
-      const response = await ai.models.generateContent({
-        model: "gemini-3.5-flash",
-        contents: prompt,
-        config: {
+      const response = await generateContentWithRetry(
+        ai,
+        "gemini-3.5-flash",
+        prompt,
+        {
           systemInstruction: "You are the Ultimate Royal Cartographer and Scholar. Ensure historical accuracy, immersive 18th century parchment narration style, combined with professional Indian Civil Services Exam (UPSC Prelims/Mains) syllabus integration, and return strict JSON.",
           responseMimeType: "application/json",
           responseSchema: {
@@ -258,7 +286,7 @@ async function startServer() {
             required: ["locationName", "coordinates", "archetype", "title", "poeticDescription", "importance", "timeline", "associatedFeatures", "trivia", "upscPrelims", "upscMains"]
           }
         }
-      });
+      );
 
       const responseText = response.text || "";
       const resultObj = JSON.parse(responseText.trim());
@@ -268,8 +296,8 @@ async function startServer() {
       });
     } catch (error: any) {
       const cleanMsg = cleanErrorMessage(error?.message || String(error));
-      console.warn("Gemini mapping failed. Engaging local cartography archive failsafe.", cleanMsg);
-      console.error("Original details of caught error:", error?.message || error);
+      console.log(`[Backup Engaged] Gemini mapping handled via local backup. Details: ${cleanMsg}`);
+      console.log(`[Backup Debug] Original details: ${error?.message || error}`);
       // Seamlessly serve local backup instead of a 500 error!
       res.json(generateLocalFallback(error?.message || String(error)));
     }

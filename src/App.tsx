@@ -36,6 +36,7 @@ export default function App() {
   // Current mapping selections
   const [activeSection, setActiveSection] = useState<MapSection>("india");
   const [activeSubSection, setActiveSubSection] = useState<MapSubSection>("political");
+  const [selectedEra, setSelectedEra] = useState<string>("All");
   const [isLegendHovered, setIsLegendHovered] = useState<boolean>(false);
 
   // Selection marker states
@@ -318,8 +319,16 @@ export default function App() {
     // Clear previous marks
     markersGroup.clearLayers();
 
+    // Filter presets based on selected era
+    let presets = activeSection === "india" ? INDIA_LOCATIONS : WORLD_LOCATIONS;
+    if (selectedEra !== "All") {
+      presets = presets.filter(loc => {
+        if (!loc.era) return true; // always show mountains and physical boundaries
+        return loc.era === selectedEra;
+      });
+    }
+
     // Render presets index pins
-    const presets = activeSection === "india" ? INDIA_LOCATIONS : WORLD_LOCATIONS;
     presets.forEach((loc) => {
       if (loc.lat === undefined || loc.lng === undefined) return;
 
@@ -327,11 +336,11 @@ export default function App() {
       
       const pinHtml = `
         <div class="relative flex items-center justify-center">
-          ${isSelected ? `<div class="absolute w-8 h-8 rounded-full border-2 border-[#a63f3f]/50 animate-ping"></div>` : ""}
-          <div class="w-4 h-4 rounded-full ${isSelected ? "bg-[#a63f3f]" : "bg-[#8a6c31]"} border border-vintage-gold shadow flex items-center justify-center cursor-pointer transition-transform hover:scale-125 z-40">
-            <div class="w-1.5 h-1.5 bg-[#fdfaf2] rounded-full"></div>
+          ${isSelected ? `<div class="absolute w-8 h-8 rounded-full border-2 border-[#3d522e]/50 animate-ping"></div>` : ""}
+          <div class="w-4 h-4 rounded-full ${isSelected ? "bg-[#3d522e]" : "bg-[#5c7c44]"} border border-white shadow flex items-center justify-center cursor-pointer transition-transform hover:scale-125 z-40">
+            <div class="w-1.5 h-1.5 bg-white rounded-full"></div>
           </div>
-          <div class="absolute top-4 left-4 bg-parchment-light/95 text-charcoal-ink text-[8px] border border-vintage-gold/50 rounded px-1 font-bold whitespace-nowrap opacity-85 shadow-sm capitalize font-serif z-50">
+          <div class="absolute top-4 left-4 bg-white text-[#1c2a12] text-[8px] border border-[#3d522e]/40 rounded px-1.5 py-0.5 font-bold whitespace-nowrap opacity-90 shadow-sm capitalize font-serif z-50">
             ${loc.name}
           </div>
         </div>
@@ -383,6 +392,103 @@ export default function App() {
 
         polyline.addTo(markersGroup);
       });
+    }
+
+    // Render river flow across the area when a location is particularly selected
+    if (selectedLocation && selectedLocation.lat !== undefined && selectedLocation.lng !== undefined) {
+      const locLat = selectedLocation.lat;
+      const locLng = selectedLocation.lng;
+      let riverPoints: [number, number][] = [];
+      let riverName = "Local Waterway";
+      
+      // Match with well-known historical river systems for immersive cartography
+      const id = selectedLocation.id;
+      if (id === "delhi" || id === "agra" || id === "varanasi" || id === "pataliputra" || id === "calcutta" || id === "murshidabad" || id === "kannauj" || id === "jaunpur" || id === "nalanda") {
+        riverPoints = [
+          [locLat + 0.8, locLng - 1.2],
+          [locLat + 0.4, locLng - 0.6],
+          [locLat, locLng],
+          [locLat - 0.3, locLng + 0.5],
+          [locLat - 0.6, locLng + 1.2]
+        ];
+        riverName = "Sacred Yamuna-Ganga System";
+      } else if (id === "hampi" || id === "badami") {
+        riverPoints = [
+          [locLat + 0.5, locLng - 0.8],
+          [locLat + 0.2, locLng - 0.4],
+          [locLat, locLng],
+          [locLat - 0.2, locLng + 0.4],
+          [locLat - 0.4, locLng + 0.8]
+        ];
+        riverName = "Tungabhadra-Krishna Basin";
+      } else if (id === "warangal" || id === "bidar" || id === "hyderabad") {
+        riverPoints = [
+          [locLat - 0.4, locLng - 0.8],
+          [locLat - 0.2, locLng - 0.4],
+          [locLat, locLng],
+          [locLat + 0.2, locLng + 0.4],
+          [locLat + 0.4, locLng + 0.8]
+        ];
+        riverName = "Godavari-Musi Basin Link";
+      } else if (id === "london") {
+        riverPoints = [
+          [locLat + 0.2, locLng - 0.4],
+          [locLat, locLng],
+          [locLat - 0.1, locLng + 0.3],
+          [locLat - 0.2, locLng + 0.6]
+        ];
+        riverName = "River Thames Estuary";
+      } else if (id === "paris") {
+        riverPoints = [
+          [locLat - 0.3, locLng - 0.4],
+          [locLat - 0.1, locLng - 0.1],
+          [locLat, locLng],
+          [locLat + 0.2, locLng + 0.3]
+        ];
+        riverName = "River Seine Valley";
+      } else if (id === "cairo" || id === "alexandria") {
+        riverPoints = [
+          [locLat - 1.5, locLng + 0.2],
+          [locLat - 0.8, locLng + 0.1],
+          [locLat, locLng],
+          [locLat + 0.6, locLng - 0.3]
+        ];
+        riverName = "Imperial Nile Delta Channel";
+      } else if (id === "vienna") {
+        riverPoints = [
+          [locLat + 0.4, locLng - 0.6],
+          [locLat, locLng],
+          [locLat - 0.3, locLng + 0.5]
+        ];
+        riverName = "Danube River Corridor";
+      } else {
+        // Generate an elegant, undulating local river flow that flows through the selected area
+        riverPoints = [
+          [locLat + 0.4, locLng - 0.5],
+          [locLat + 0.15, locLng - 0.2],
+          [locLat, locLng],
+          [locLat - 0.1, locLng + 0.25],
+          [locLat - 0.3, locLng + 0.5]
+        ];
+        riverName = `${selectedLocation.name} Lifeline Basin`;
+      }
+      
+      const selectRiverPolyline = L.polyline(riverPoints, {
+        color: "#0284c7", // Deep cyan blue
+        weight: 5.5,
+        opacity: 0.95,
+        className: "river-flowing-selected" // animated via our active class!
+      }).addTo(markersGroup);
+
+      selectRiverPolyline.bindTooltip(
+        `<div class="serif-vintage font-bold text-[9px] text-[#0284c7] bg-[#f0fdf4]/95 border border-[#3d522e]/30 rounded px-1.5 py-0.5 shadow-md whitespace-nowrap tracking-wide uppercase">🌊 ${riverName} Flow</div>`,
+        {
+          permanent: true,
+          direction: "center",
+          className: "transparent-leaflet-tooltip",
+          sticky: true
+        }
+      ).openTooltip();
     }
 
     // Render custom surveyor dropped crosshair caliper
@@ -489,7 +595,7 @@ export default function App() {
 
       marker.addTo(markersGroup);
     }
-  }, [activeSection, selectedLocation, customMarker, activeSubSection, selectedRiver]);
+  }, [activeSection, selectedLocation, customMarker, activeSubSection, selectedRiver, selectedEra]);
 
   // Request high-quality cartographical analysis from server (Gemini API)
   const fetchScholarReport = async (
@@ -532,7 +638,7 @@ export default function App() {
       playVintageSound("quill");
     } catch (err: any) {
       const fallbackName = name || (coords ? `Survey Point [${coords}]` : "Ancient Outlook");
-      console.warn("Front-end fallback engaged:", err?.message || err);
+      console.log("[Failsafe Active] Front-end fallback engaged:", err?.message || err);
 
       // Search lists for a matched preset to deliver ultra high fidelity factual fallback
       const presetMatches = [...INDIA_LOCATIONS, ...WORLD_LOCATIONS];
@@ -830,7 +936,7 @@ export default function App() {
         friendlyError = "The celestial dynamic courier (Gemini API) is overloaded (Quota reached). Appended local notes.";
       }
       
-      console.warn("Dynamic chronicle elaboration failed:", friendlyError);
+      console.log("[Failsafe Active] Dynamic chronicle elaboration failed:", friendlyError);
       setElaborationError(friendlyError);
       setTimeout(() => setElaborationError(null), 8000);
 
@@ -858,7 +964,11 @@ export default function App() {
   };
 
   // Choose preset categories
-  const presetsToShow = activeSection === "india" ? INDIA_LOCATIONS : WORLD_LOCATIONS;
+  const presetsToShow = (activeSection === "india" ? INDIA_LOCATIONS : WORLD_LOCATIONS).filter(loc => {
+    if (selectedEra === "All") return true;
+    if (!loc.era) return true; // always show physical/geographical elements
+    return loc.era === selectedEra;
+  });
 
   const isOfflineVault = currentReport?.systemMessage?.toLowerCase().includes("offline") || 
                          currentReport?.systemMessage?.toLowerCase().includes("backup") ||
@@ -867,17 +977,17 @@ export default function App() {
                          currentReport?.systemMessage?.toLowerCase().includes("quiet");
 
   return (
-    <div className="min-h-screen bg-[#1c140c] text-charcoal-ink p-2 md:p-6 flex flex-col justify-between select-none font-serif relative overflow-x-hidden">
+    <div className="min-h-screen bg-[#1b2611] text-charcoal-ink p-2 md:p-6 flex flex-col justify-between select-none font-serif relative overflow-x-hidden">
       
       {/* Aesthetic Border Grids */}
-      <div className="absolute inset-0 pointer-events-none border-[12px] border-[#2d1e11] opacity-70 z-40"></div>
+      <div className="absolute inset-0 pointer-events-none border-[12px] border-[#243317] opacity-70 z-40"></div>
       <div className="absolute inset-1 pointer-events-none border border-vintage-gold/20 z-40"></div>
       
       {/* Background ambience noise (Sepia overlay) */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0)_60%,rgba(0,0,0,0.85)_100%)] pointer-events-none z-10"></div>
 
       {/* Main Header Row */}
-      <header className="z-20 w-full max-w-[1600px] mx-auto text-center py-4 px-6 border-b border-[#3d2715]/40 bg-[#2b1b10]/95 rounded-t-lg shadow-2xl relative">
+      <header className="z-20 w-full max-w-[1600px] mx-auto text-center py-4 px-6 border-b border-[#3d502d]/40 bg-[#28381b]/95 rounded-t-lg shadow-2xl relative">
         <div className="absolute top-2 left-6 text-vintage-gold/60 sans-imperial text-xs hidden sm:block">
           Anno Domini MDCCCLX
         </div>
@@ -893,7 +1003,7 @@ export default function App() {
         >
           IMPERIAL MAPS
         </h1>
-        <p className="serif-vintage text-amber-200/80 italic text-xs md:text-sm tracking-wide mt-1">
+        <p className="serif-vintage text-emerald-100/80 italic text-xs md:text-sm tracking-wide mt-1">
           The Interactive Cartographical Journal and Geopolitical Atlas of Nations
         </p>
         
@@ -905,7 +1015,7 @@ export default function App() {
         </div>
 
         {/* Informative vintage notice bar */}
-        <p className="text-[11px] sans-imperial text-amber-100/60 max-w-2xl mx-auto line-clamp-1">
+        <p className="text-[11px] sans-imperial text-emerald-100/60 max-w-2xl mx-auto line-clamp-1">
           Click any point upon the historic parchment to commission a scholarly chronicle on local topography, ancient wars, and legendary lineages from the Royal society.
         </p>
 
@@ -914,7 +1024,7 @@ export default function App() {
           onClick={toggleSound}
           type="button"
           id="sound-toggle-btn"
-          className="absolute right-6 top-10 text-vintage-gold hover:text-amber-100 transition-colors p-2 bg-[#1f120a] hover:bg-[#341d10] border border-vintage-gold/30 rounded-full mt-2"
+          className="absolute right-6 top-10 text-vintage-gold hover:text-emerald-100 transition-colors p-2 bg-[#141f0c] hover:bg-[#203014] border border-vintage-gold/30 rounded-full mt-2"
           title={soundEnabled ? "Mute Scholastic Bell" : "Enable Classical Lute bell and Quill Soundwaves"}
         >
           {soundEnabled ? <Volume2 className="w-4 h-4" /> : <VolumeX className="w-4 h-4 opacity-50" />}
@@ -925,10 +1035,10 @@ export default function App() {
       <main className="z-20 w-full max-w-[1600px] mx-auto flex-1 grid grid-cols-1 lg:grid-cols-12 gap-5 mt-4 items-stretch">
         
         {/* Left Side: Map Navigation, Vector Canvas & Legend (Cols: 8) */}
-        <section id="map-navigation-section" className="lg:col-span-8 flex flex-col justify-between bg-[#2d1a0e] border border-[#4a2e19] p-5 rounded-lg shadow-xl relative">
+        <section id="map-navigation-section" className="lg:col-span-8 flex flex-col justify-between bg-[#28381c] border border-[#3d502d] p-5 rounded-lg shadow-xl relative">
           
           {/* Section Selector Tab (India Realm vs World Known) */}
-          <div className="flex border-b border-[#4d321d] pb-3 justify-between items-center gap-2">
+          <div className="flex border-b border-[#3d502d]/40 pb-3 justify-between items-center gap-2">
             
             <div className="flex gap-2 flex-1">
               <button
@@ -937,8 +1047,8 @@ export default function App() {
                 onClick={() => handleSectionChange("india")}
                 className={`flex-1 sm:flex-initial flex items-center justify-center gap-2 px-4 py-2 text-xs md:text-sm sans-imperial rounded border cursor-pointer transition-all duration-300 ${
                   activeSection === "india"
-                    ? "bg-[#8a3324] text-amber-100 border-[#b8705c] shadow-[0_4px_10px_rgba(138,51,36,0.5)]"
-                    : "bg-[#1f1008] text-vintage-gold/70 border-vintage-gold/20 hover:text-vintage-gold hover:bg-[#28150a]"
+                    ? "bg-[#4d6b38] text-emerald-50 border-[#7da85e] shadow-[0_4px_10px_rgba(77,107,56,0.5)]"
+                    : "bg-[#141f0c] text-[#a4c28e]/70 border-[#4d6634]/20 hover:text-[#a4c28e] hover:bg-[#1f3014]"
                 }`}
               >
                 <Compass className={`w-4 h-4 ${activeSection === "india" ? "animate-spin" : ""}`} style={{ animationDuration: '4s' }} />
@@ -951,8 +1061,8 @@ export default function App() {
                 onClick={() => handleSectionChange("world")}
                 className={`flex-1 sm:flex-initial flex items-center justify-center gap-2 px-4 py-2 text-xs md:text-sm sans-imperial rounded border cursor-pointer transition-all duration-300 ${
                   activeSection === "world"
-                    ? "bg-[#254f38] text-amber-100 border-[#6ca079] shadow-[0_4px_10px_rgba(37,79,56,0.5)]"
-                    : "bg-[#1f1008] text-vintage-gold/70 border-vintage-gold/20 hover:text-vintage-gold hover:bg-[#28150a]"
+                    ? "bg-[#45632e] text-emerald-50 border-[#6a914e] shadow-[0_4px_10px_rgba(69,99,46,0.5)]"
+                    : "bg-[#141f0c] text-[#a4c28e]/70 border-[#4d6634]/20 hover:text-[#a4c28e] hover:bg-[#1f3014]"
                 }`}
               >
                 <Globe className={`w-4 h-4 ${activeSection === "world" ? "animate-pulse" : ""}`} />
@@ -1135,14 +1245,88 @@ export default function App() {
               />
             </div>
 
+            {/* Timeline Historical Era Slider Component */}
+            <div className="bg-[#f2f6f0] border-t border-b border-[#3d502d]/20 p-3 select-none relative z-10">
+              <div className="flex justify-between items-center mb-1.5">
+                <span className="sans-imperial text-[10px] font-bold tracking-wider text-[#3d522e] flex items-center gap-1.5">
+                  <span className="text-xs">🧭</span> HISTORICAL TIMELINE EPOCH FILTER
+                </span>
+                <span className="text-[9px] font-mono font-bold bg-[#3d522e]/10 text-[#3d522e] px-2 py-0.5 rounded-full uppercase tracking-wide">
+                  Active Era: {selectedEra === "All" ? "All Imperial Eras" : `${selectedEra} Era`}
+                </span>
+              </div>
+              
+              {/* Slider Track with Era Nodes */}
+              <div className="relative pt-1.5 pb-5 px-2">
+                {/* Visual Connector Line */}
+                <div className="absolute top-3.5 left-4 right-4 h-1 bg-[#dce6d3] rounded-full">
+                  {/* Highlight track for active era range */}
+                  <div 
+                    className="h-full bg-[#4d6b38] rounded-full transition-all duration-300"
+                    style={{
+                      width: 
+                        selectedEra === "All" ? "0%" :
+                        selectedEra === "Ancient" ? "25%" :
+                        selectedEra === "Medieval" ? "50%" :
+                        selectedEra === "Early Modern" ? "75%" : "100%"
+                    }}
+                  />
+                </div>
+
+                {/* 5 Nodes for Eras */}
+                <div className="relative flex justify-between">
+                  {[
+                    { id: "All", label: "All Eras", sub: "Epoch Infinity" },
+                    { id: "Ancient", label: "Ancient", sub: "Pre-500 CE" },
+                    { id: "Medieval", label: "Medieval", sub: "500–1500" },
+                    { id: "Early Modern", label: "Early Modern", sub: "1500–1800" },
+                    { id: "Modern", label: "Modern", sub: "Post-1800" }
+                  ].map((eraItem) => {
+                    const isActive = selectedEra === eraItem.id;
+                    return (
+                      <button
+                        key={eraItem.id}
+                        type="button"
+                        onClick={() => {
+                          setSelectedEra(eraItem.id);
+                          playVintageSound("click");
+                        }}
+                        className="flex flex-col items-center focus:outline-none cursor-pointer group z-20 relative -top-0.5"
+                      >
+                        {/* Node Bubble */}
+                        <div className={`w-3 h-3 rounded-full border-2 border-white transition-all duration-200 shadow-xs flex items-center justify-center ${
+                          isActive 
+                            ? "bg-[#4d6b38] scale-125 ring-2 ring-[#4d6b38]/30" 
+                            : "bg-[#dce6d3] hover:bg-[#a4c28e]"
+                        }`}>
+                          {isActive && <div className="w-1 h-1 bg-white rounded-full"></div>}
+                        </div>
+                        {/* Node labels */}
+                        <div className="absolute top-4 text-center flex flex-col items-center min-w-[65px]">
+                          <span className={`text-[9px] font-sans font-bold tracking-tight leading-none whitespace-nowrap transition-colors duration-200 ${
+                            isActive ? "text-[#1f3612] font-extrabold scale-102" : "text-[#3d522e]/60 group-hover:text-[#3d522e]"
+                          }`}>
+                            {eraItem.label}
+                          </span>
+                          <span className="text-[7px] font-mono text-[#3d522e]/50 mt-0.5 scale-90 whitespace-nowrap">
+                            {eraItem.sub}
+                          </span>
+                        </div>
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+
             {/* Bottom Coordinate Tracking Status Bar */}
-            <div className="bg-[#24180d] text-vintage-gold px-3 py-1 text-[11px] sans-imperial flex justify-between items-center select-none border-t border-[#3e2917] rounded-b">
+            <div className="bg-[#182410] text-[#a4c28e] px-3 py-1 text-[11px] sans-imperial flex justify-between items-center select-none border-t border-[#2e3e21] rounded-b">
               <div className="flex items-center gap-1.5">
                 <Compass className="w-3.5 h-3.5 animate-spin-slow" />
                 <span>Navigational Compass Caliper: </span>
-                <span className="text-amber-100 font-bold ml-1">{cursorCoordinates}</span>
+                <span className="text-emerald-50 font-bold ml-1">{cursorCoordinates}</span>
               </div>
-              <div className="text-amber-100/60 hidden sm:block">
+              <div className="text-emerald-100/60 hidden sm:block">
                 <span>Mercator Projection System v4.1</span>
               </div>
             </div>
@@ -1166,8 +1350,8 @@ export default function App() {
                       type="button"
                       className={`text-left px-2 py-1.5 rounded border text-[10px] md:text-xs serif-vintage flex flex-col justify-between transition-colors cursor-pointer ${
                         isSelected
-                          ? "bg-[#612117] text-white border-yellow-600/50"
-                          : "bg-[#1a0f08] text-amber-100/80 border-vintage-gold/10 hover:bg-[#2e1d12] hover:text-amber-100"
+                          ? "bg-[#4d6b38] text-white border-[#7da85e]"
+                          : "bg-[#141f0c] text-emerald-100/80 border-[#4d6634]/20 hover:bg-[#1f3014] hover:text-white"
                       }`}
                     >
                       <div className="font-bold truncate">{item.name}</div>
@@ -1243,10 +1427,10 @@ export default function App() {
         </section>
 
         {/* Right Side: Geopolitical Chronicle Notebook Scroll (Cols: 4) */}
-        <section id="scholarly-ledger-journal" className="lg:col-span-4 flex flex-col justify-between bg-[#fbf5e6] text-[#2b241a] p-4 md:p-6 rounded-lg shadow-2xl parchment-texture ornamental-border relative min-h-[500px]">
+        <section id="scholarly-ledger-journal" className="lg:col-span-4 flex flex-col justify-between bg-white text-[#1c2a12] p-4 md:p-6 rounded-lg shadow-2xl border-4 border-[#3d502d] relative min-h-[500px]">
           
           {/* Inner Ledger Frame Border */}
-          <div className="absolute inset-2 pointer-events-none border border-[#8a6c31]/30 rounded"></div>
+          <div className="absolute inset-2 pointer-events-none border border-[#3d502d]/25 rounded"></div>
 
           {isChroniclerLoading ? (
             // Full Royal Chronicles Loading Stage
@@ -1433,6 +1617,39 @@ export default function App() {
                             {eventObj.event}
                           </div>
                         </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Kings Ruled with Timeline (Local Ledger Data) */}
+                {selectedLocation?.kingsRuled && (
+                  <div className="space-y-2 mt-4 bg-[#f4f7f1] border border-[#4d6634]/30 p-3 rounded-lg shadow-inner">
+                    <h4 className="sans-imperial text-[10px] font-bold tracking-wider text-[#3d522e] border-[#4d6634]/20 border-b pb-1 uppercase flex items-center gap-1.5">
+                      <span className="text-sm">👑</span>
+                      <span>Sovereign Dynasties & Kings Ruled Timeline</span>
+                    </h4>
+                    <p className="serif-vintage text-[11.5px] leading-relaxed text-[#213017] pl-1 font-medium select-text">
+                      {selectedLocation.kingsRuled}
+                    </p>
+                  </div>
+                )}
+
+                {/* Geographical Indication (GI) Tags (Local Ledger Data) */}
+                {selectedLocation?.giTags && selectedLocation.giTags.length > 0 && (
+                  <div className="space-y-2 mt-4 bg-[#f8faf6] border border-[#4d6634]/20 p-3 rounded-lg shadow-sm">
+                    <h4 className="sans-imperial text-[10px] font-bold tracking-wider text-[#3d522e] border-b border-[#4d6634]/15 pb-1 uppercase flex items-center gap-1.5">
+                      <span className="text-sm">🏛️</span>
+                      <span>Geographical Indication (GI) Registry</span>
+                    </h4>
+                    <div className="flex flex-wrap gap-1.5 pt-1 pl-1">
+                      {selectedLocation.giTags.map((tag, tIdx) => (
+                        <span 
+                          key={tIdx} 
+                          className="text-[9px] px-2 py-0.5 rounded bg-[#eef3e9] border border-[#4d6634]/25 text-[#30481d] font-bold tracking-wide uppercase shadow-xs flex items-center gap-1"
+                        >
+                          <span className="text-[#4d6634]">✦</span> {tag}
+                        </span>
                       ))}
                     </div>
                   </div>

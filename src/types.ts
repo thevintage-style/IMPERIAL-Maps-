@@ -12,6 +12,9 @@ export interface PresetLocation {
   category: "city" | "river" | "mountain" | "plain" | "plateau" | "fort" | "pass";
   subCategoryText: string;
   details: string;
+  era?: "Ancient" | "Medieval" | "Early Modern" | "Modern";
+  kingsRuled?: string;
+  giTags?: string[];
 }
 
 export interface ChroniclerReport {
